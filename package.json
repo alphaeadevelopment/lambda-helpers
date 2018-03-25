@@ -1,5 +1,5 @@
 {
-  "name": "@alphaeadev/lambda-helpers",
+  "name": "alphaeadev-lambda-utils",
   "version": "1.0.0",
   "description": "Lambda helper functions",
   "main": "index.js",
@@ -11,6 +11,9 @@
   },
   "author": "Graham King <gking2224@gmail.com>",
   "license": "ISC",
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org"
+  },
   "devDependencies": {
     "babel-core": "^6.26.0",
     "babel-loader": "^7.1.2",
