@@ -1,5 +1,5 @@
 {
-  "name": "lambda-helpers",
+  "name": "@alphaeadev/lambda-helpers",
   "version": "1.0.0",
   "description": "Lambda helper functions",
   "main": "index.js",
