@@ -21,8 +21,8 @@ const invokeHandler = (handler, req, res) => {
 
   };
   const callback = (err, response) => {
-    if (err) res.status(err.statusCode).send(err.body);
-    else res.status(response.statusCode).send(response.body)
+    if (err) res.status(err.statusCode).set(err.headers).send(err.body);
+    else res.status(response.statusCode).set(response.headers).send(response.body)
   };
   handler.call(null, event, context, callback);
 }

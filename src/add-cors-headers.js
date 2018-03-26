@@ -7,6 +7,7 @@ module.exports = (
   }
 ) => (requestHeaders, responseHeaders) => {
   const origin = requestHeaders.origin || requestHeaders.Origin;
+  console.log(origin);
   console.log('Got origin: %s', origin);
   const allowedHeaders = DEFAULT_ALLOWED_HEADERS;
   allowedHeaders.push(...acceptedHeaders);
