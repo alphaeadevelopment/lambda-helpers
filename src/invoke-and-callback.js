@@ -35,23 +35,31 @@ const invokeAndCallback = (corsHeaders) => (func, callback, ...args) => {
       rv
         .then(r => {
           console.log('Got promise response %o', r);
-          callback(null, successResponse(r, corsHeaders));
+          const response = successResponse(r, corsHeaders);
+          console.log('Callback response: ', response);
+          callback(null, response);
           // callback(null, );
         })
         .catch(e => {
           console.error(e.stack);
-          callback(null, errorResponse(e, corsHeaders));
+          const response = errorResponse(e, corsHeaders);
+          console.log('Callback response: ', response);
+          callback(null, response);
         });
     }
     else {
       console.log('Got response %s', JSON.stringify(rv));
-      callback(null, successResponse(rv, corsHeaders));
+      const response = successResponse(rv, corsHeaders);
+      console.log('Callback response: ', response);
+      callback(null, response);
     }
   }
   catch (e) {
     console.error('Caught error %s', JSON.stringify(e));
     console.error(e.stack);
-    callback(null, errorResponse(e, corsHeaders));
+    const response = errorResponse(e, corsHeaders);
+    console.log('Callback response: ', response);
+    callback(null, response);
   }
 };
 exports.withCorsHeaders = invokeAndCallback;
