@@ -6,7 +6,7 @@ const successResponse = (b = {}, corsHeaders) => {
   const data = (b && b.data) ? b.data : b;
   return ({
     statusCode: (b && b.statusCode) || 200,
-    body: data,
+    body: JSON.stringify(data),
     headers: {
       ...corsHeaders,
       ...headers,
